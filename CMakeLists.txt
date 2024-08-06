@@ -2,12 +2,14 @@ cmake_minimum_required(VERSION 3.12.0)
 project(Server)
 
 add_executable(Server
+  WIN32
   main.cpp
   src/business.cpp
   src/sqlite3.c
   src/data_manager.cpp
   src/font_utils.cpp
   src/label_utils.cpp
+  resource.rc
 )
 
 
@@ -28,6 +30,8 @@ include_directories(include)
 target_link_libraries(Server Rpcrt4)
 target_link_libraries(Server fmt::fmt)
 target_link_libraries(Server gdi32)
+target_link_libraries(Server comctl32)
+target_link_libraries(Server uxtheme)
 
 include(CTest)
 enable_testing()

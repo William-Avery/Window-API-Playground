@@ -1,0 +1,4 @@
+#include <windows.h>
+#include <commctrl.h>
+
+1 RT_MANIFEST "app.manifest"
